@@ -158,7 +158,7 @@ class MinecraftServer
     {// Получение данных через query
         $thetime = microtime(true);
 
-        $this->socket = @fsockopen('udp://' . $address, 25565, $ErrNo, $ErrStr, $timeout);
+        $this->socket = @fsockopen($address, 25565, $ErrNo, $ErrStr, $timeout);
         $info['ping'] = round((microtime(true) - $thetime) * 1000);
         if ($this->socket === false)
             return array(
